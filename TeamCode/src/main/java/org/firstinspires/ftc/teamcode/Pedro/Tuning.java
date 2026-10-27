@@ -1,10 +1,10 @@
-package org.firstinspires.ftc.teamcode.Pedro.Procedure;
+package org.firstinspires.ftc.teamcode.Pedro;
 
 
 import com.pedropathing.tuning.autotune.Procedure;
 import com.pedropathing.tuning.autotune.Tuner;
+import org.firstinspires.ftc.teamcode.pedro.procedures.MecanumTuner;
 
-import org.firstinspires.ftc.teamcode.Pedro.Procedure.MecanumTuner;
 
 public class Tuning {
     @Tuner

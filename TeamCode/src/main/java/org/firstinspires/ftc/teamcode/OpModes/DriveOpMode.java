@@ -2,8 +2,7 @@ package org.firstinspires.ftc.teamcode.OpModes;
 
 import com.pedropathing.follower.Follower;
 
-import org.firstinspires.ftc.teamcode.Robot;
-import org.firstinspires.ftc.teamcode.pedro.Constants;
+import org.firstinspires.ftc.teamcode.MyRobot;
 
 import dev.nextftc.robot.opmode.NextOpMode;
 import dev.nextftc.robot.opmode.NextTeleop;
@@ -12,13 +11,13 @@ import dev.nextftc.robot.opmode.NextTeleop;
 public class DriveOpMode extends NextOpMode {
     private Follower follower;
 
-    public DriveOpMode(Robot robot){
+    public DriveOpMode(MyRobot robot){
         super(robot);
     }
 
     @Override
     public void disabledPeriodic(){
-        follower = Constants.create(hardwareMap);
+//        follower = Constants.create(hardwareMap);
     }
 
 
@@ -28,7 +27,7 @@ public class DriveOpMode extends NextOpMode {
         double lateral = gamepad1.left_stick_x;
         double turn = gamepad1.right_stick_x;
 
-        follower.manual(forward,lateral,turn);
-        follower.update();
+//        follower.manual(forward,lateral,turn);
+//        follower.update();
     }
 }

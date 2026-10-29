@@ -20,13 +20,17 @@ public class Constants {
         c.backRightDirection.set(DcMotorSimple.Direction.REVERSE);
     });
 
-    public static Follower create(HardwareMap h){
-//      Add other tuning data to use follower properly
-        return new Follower(
-                new PinpointLocalizer(h),
-                new Mecanum(h,drivetrainConfig),
-                new Foresight()
-
-        );
+//    public static Follower create(HardwareMap h){
+////      Add other tuning data to use follower properly
+//        return new Follower(
+//                new PinpointLocalizer(h),
+//                new Mecanum(h,drivetrainConfig),
+//                new Foresight()
+//
+//        );
+//    }
+    public static Follower create(HardwareMap h) {
+        // return new Follower(Drivetrain, Localizer, Foresight);
+        return null;
     }
 }

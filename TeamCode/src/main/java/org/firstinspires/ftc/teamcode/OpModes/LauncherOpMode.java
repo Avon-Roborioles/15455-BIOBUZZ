@@ -1,18 +1,18 @@
 package org.firstinspires.ftc.teamcode.OpModes;
 
-import org.firstinspires.ftc.teamcode.Robot;
+import org.firstinspires.ftc.teamcode.MyRobot;
 
 import dev.nextftc.robot.Telemetry;
 import dev.nextftc.robot.opmode.NextOpMode;
 import dev.nextftc.robot.opmode.NextTeleop;
 import dev.nextftc.robot.triggers.CommandGamepad;
 
-@NextTeleop
+@NextTeleop(name = "LauncherOpMode")
 public class LauncherOpMode extends NextOpMode {
-    private Robot LNR;
+    private MyRobot LNR;
     CommandGamepad gp1 = new CommandGamepad(gamepad1);
 
-    public LauncherOpMode(Robot LNR){
+    public LauncherOpMode(MyRobot LNR){
         super(LNR);
     }
 

@@ -4,6 +4,7 @@ import static com.pedropathing.ivy.behaviors.InterruptedBehavior.END;
 
 import com.pedropathing.ivy.Command;
 
+import dev.nextftc.hardware.RobotController;
 import dev.nextftc.hardware.actuators.NextMotor;
 import dev.nextftc.robot.Mechanism;
 import dev.nextftc.robot.Telemetry;

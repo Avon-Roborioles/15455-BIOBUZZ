@@ -9,21 +9,22 @@ import dev.nextftc.robot.triggers.CommandGamepad;
 
 @NextTeleop(name = "LauncherOpMode")
 public class LauncherOpMode extends NextOpMode {
-    private MyRobot LNR;
+    private final MyRobot robot;
     CommandGamepad gp1 = new CommandGamepad(gamepad1);
 
-    public LauncherOpMode(MyRobot LNR){
-        super(LNR);
+    public LauncherOpMode(MyRobot robot){
+        super(robot);
+        this.robot = robot;
     }
 
     @Override
     public void periodic(){
-        gp1.circle().whileTrue(LNR.launcher.onRun);
-        gp1.a().onTrue(LNR.launcher.onStop);
+        gp1.b().whileTrue(robot.launcher.onRun);
+        gp1.a().onTrue(robot.launcher.onStop);
 
 
 
-        Telemetry.log("Motor Velocity: ", LNR.launcher.launchMotor.getEncoderVelocity());
+        Telemetry.log("Motor Velocity: ", robot.launcher.launchMotor.getEncoderVelocity());
         Telemetry.update();
     }
 

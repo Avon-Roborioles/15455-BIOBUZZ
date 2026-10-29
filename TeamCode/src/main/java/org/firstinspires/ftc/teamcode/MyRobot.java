@@ -10,10 +10,10 @@ import dev.nextftc.robot.NextRobot;
 
 public class MyRobot implements NextRobot {
     public LauncherPT launcher = new LauncherPT();
-    public SensorTest cdSensor = new SensorTest();
+//    public SensorTest cdSensor = new SensorTest();
 
     @Override
     public Set<Mechanism> getMechanisms(){
-        return Set.of(launcher,cdSensor);
+        return Set.of(launcher);
     }
 }

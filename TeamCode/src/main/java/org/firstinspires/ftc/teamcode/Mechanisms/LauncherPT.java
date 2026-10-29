@@ -14,8 +14,9 @@ public class LauncherPT implements Mechanism {
     private double throttle = 1;
 
     public LauncherPT(){
-        launchMotor.setZeroPowerBehavior(NextMotor.ZeroPowerBehavior.BRAKE);
         launchMotor = new NextMotor("launchMotor");
+        launchMotor.setZeroPowerBehavior(NextMotor.ZeroPowerBehavior.BRAKE);
+        launchMotor.setDirection(NextMotor.Direction.REVERSE);
     }
 
     public Command onRun = Command.build()
@@ -31,6 +32,7 @@ public class LauncherPT implements Mechanism {
                     () -> launchMotor.setThrottle(0)
             )
             .requiring(launchMotor)
-            .setPriority(2);
+            .setInterruptedBehavior(END)
+            .setPriority(1);
 
 }

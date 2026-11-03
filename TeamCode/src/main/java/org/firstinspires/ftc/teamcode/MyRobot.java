@@ -11,6 +11,9 @@ import dev.nextftc.robot.NextRobot;
 public class MyRobot implements NextRobot {
     public LauncherPT launcher = new LauncherPT();
 //    public SensorTest cdSensor = new SensorTest();
+    public LauncherPT getLauncer(){
+        return launcher;
+    }
 
     @Override
     public Set<Mechanism> getMechanisms(){

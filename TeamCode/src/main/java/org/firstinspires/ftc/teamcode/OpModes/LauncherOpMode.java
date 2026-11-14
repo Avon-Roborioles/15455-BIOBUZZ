@@ -12,11 +12,13 @@ import dev.nextftc.robot.opmode.NextOpMode;
 import dev.nextftc.robot.opmode.NextTeleop;
 import dev.nextftc.robot.triggers.CommandGamepad;
 import dev.nextftc.units.Units;
+import dev.nextftc.units.measuretypes.AngularVelocity;
 
 @NextTeleop(name = "LauncherOpMode")
 public class LauncherOpMode extends NextOpMode {
     private final MyRobot robot;
     private double target = 100;
+    private AngularVelocity targetVelo = Units.getRotationsPerMinute(target);
     private double kV = 0.0002;
     private double kP = 0;
     private double p = 0;
@@ -39,7 +41,7 @@ public class LauncherOpMode extends NextOpMode {
     }
     @Override
     public void periodic() {
-        gp1.b().onTrue(robot.launcher.setTargetVelo(target));
+        gp1.b().onTrue(robot.launcher.setTargetVelo(targetVelo));
         gp1.a().onTrue(robot.launcher.onStop);
 //        gp1.dpadUp().onTrue(instant(() -> target = 10000));
         robot.launcher.launchMotor.getVelocityConstants().withV(kV);
